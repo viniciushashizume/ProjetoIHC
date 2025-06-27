@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatório de Ocupação</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Relatório de Ocupação de Voos</h1>
+    </header>
+    <nav>
+        <a href="index.html" class="active">Início</a>
+        <a href="cadastroAvioes.html">Cadastrar Avião</a>
+        <a href="cadastroVoos.html">Cadastrar Voo</a>
+        <a href="compraPassagens.html">Comprar Passagem</a>
+        <a href="relatorioOcupacao.html">Relatório de Ocupação</a>
+        <a href="relatorioVendas.html">Relatório de Vendas</a>
+    </nav>
+    <main>
+        <div class="container">
+             <div class="form-group">
+                <label for="filtro_voo_relatorio">Filtrar por Voo:</label>
+                <select id="filtro_voo_relatorio" name="filtro_voo_relatorio" onchange="gerarRelatorioOcupacao(this.value)">
+                    <option value="">Selecione um voo para ver os detalhes</option>
+                    <option value="voo1">Voo G3-1234 - 25/12/2025</option>
+                    <option value="voo2">Voo AD-5678 - 26/12/2025</option>
+                </select>
+            </div>
+            <div id="relatorio-ocupacao-container" style="display:none;">
+                <h3>Detalhes do Voo <span id="voo-id-relatorio"></span></h3>
+                <div class="painel-info">
+                    <h4>Capacidade Total</h4>
+                    <p id="capacidade-total">170</p>
+                </div>
+                <div class="painel-info">
+                    <h4>Assentos Padrão Ocupados</h4>
+                    <p id="padrao-ocupados">50 / 150</p>
+                </div>
+                <div class="painel-info">
+                    <h4>Assentos Especiais Ocupados</h4>
+                    <p id="especiais-ocupados">10 / 20</p>
+                </div>
+                 <div class="painel-info ocupacao-visual">
+                     <h4>Taxa de Ocupação</h4>
+                     <div class="progress-bar">
+                         <div id="progress-bar-fill" style="width: 35%;">35%</div>
+                     </div>
+                 </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2025 Companhia Aérea</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

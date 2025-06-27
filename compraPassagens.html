@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compra de Passagens</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Compra de Passagens</h1>
+    </header>
+    <nav>
+        <a href="index.html" class="active">Início</a>
+        <a href="cadastroAvioes.html">Cadastrar Avião</a>
+        <a href="cadastroVoos.html">Cadastrar Voo</a>
+        <a href="compraPassagens.html">Comprar Passagem</a>
+        <a href="relatorioOcupacao.html">Relatório de Ocupação</a>
+        <a href="relatorioVendas.html">Relatório de Vendas</a>
+    </nav>
+    <main>
+        <div class="container">
+            <div class="passo">
+                <h3>Passo 1: Selecione o Voo</h3>
+                <div class="form-group">
+                    <label for="voo_disponivel">Voos Disponíveis:</label>
+                    <select id="voo_disponivel" name="voo_disponivel" onchange="mostrarAssentos(this.value)">
+                        <option value="">Selecione um voo</option>
+                        <option value="voo1">Voo G3-1234 - São Paulo (GRU) para Rio de Janeiro (GIG) - 25/12/2025 10:30</option>
+                        <option value="voo2">Voo AD-5678 - Belo Horizonte (CNF) para São Paulo (GRU) - 26/12/2025 14:00</option>
+                    </select>
+                </div>
+            </div>
+            <div id="selecao-assentos" class="passo" style="display:none;">
+                <h3>Passo 2: Selecione os Assentos</h3>
+                <div class="legenda">
+                    <div><span class="assento disponivel"></span> Disponível</div>
+                    <div><span class="assento ocupado"></span> Ocupado</div>
+                    <div><span class="assento selecionado"></span> Selecionado</div>
+                </div>
+                <div class="mapa-assentos">
+                    </div>
+                <h4>Assentos Selecionados: <span id="assentos-info">Nenhum</span></h4>
+                <h4>Total a Pagar: R$ <span id="total-pagar">0,00</span></h4>
+                <button class="btn" onclick="finalizarCompra()">Finalizar Compra</button>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2025 Companhia Aérea</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

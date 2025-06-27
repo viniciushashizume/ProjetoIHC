@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Aviões</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Cadastro de Aviões</h1>
+    </header>
+    <nav>
+        <a href="index.html" class="active">Início</a>
+        <a href="cadastroAvioes.html">Cadastrar Avião</a>
+        <a href="cadastroVoos.html">Cadastrar Voo</a>
+        <a href="compraPassagens.html">Comprar Passagem</a>
+        <a href="relatorioOcupacao.html">Relatório de Ocupação</a>
+        <a href="relatorioVendas.html">Relatório de Vendas</a>
+    </nav>
+    <main>
+        <div class="container">
+            <form id="form-avioes">
+                <div class="form-group">
+                    <label for="registro">Número de Registro:</label>
+                    <input type="text" id="registro" name="registro" required>
+                </div>
+                <div class="form-group">
+                    <label for="modelo">Modelo:</label>
+                    <input type="text" id="modelo" name="modelo" required>
+                </div>
+                <div class="form-group">
+                    <label for="assentos_padrao">Qtd. Assentos Padrão:</label>
+                    <input type="number" id="assentos_padrao" name="assentos_padrao" required>
+                </div>
+                <div class="form-group">
+                    <label for="assentos_especiais">Qtd. Assentos Especiais:</label>
+                    <input type="number" id="assentos_especiais" name="assentos_especiais" required>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn">Salvar</button>
+                    <button type="button" class="btn btn-secondary" onclick="limparFormulario('form-avioes')">Cancelar</button>
+                </div>
+            </form>
+            <hr>
+            <h3>Aviões Cadastrados</h3>
+            <table id="tabela-avioes">
+                <thead>
+                    <tr>
+                        <th>Registro</th>
+                        <th>Modelo</th>
+                        <th>Assentos Padrão</th>
+                        <th>Assentos Especiais</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>PT-ABC</td>
+                        <td>Boeing 737</td>
+                        <td>150</td>
+                        <td>20</td>
+                        <td><button class="btn-delete" onclick="confirmarExclusao(this)">Excluir</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2025 Companhia Aérea</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

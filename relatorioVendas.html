@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatório de Vendas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Relatório de Vendas</h1>
+    </header>
+    <nav>
+        <a href="index.html" class="active">Início</a>
+        <a href="cadastroAvioes.html">Cadastrar Avião</a>
+        <a href="cadastroVoos.html">Cadastrar Voo</a>
+        <a href="compraPassagens.html">Comprar Passagem</a>
+        <a href="relatorioOcupacao.html">Relatório de Ocupação</a>
+        <a href="relatorioVendas.html">Relatório de Vendas</a>
+    </nav>
+    <main>
+        <div class="container">
+            <div class="filtros-relatorio">
+                <div class="form-group">
+                    <label for="tipo_relatorio">Tipo de Relatório:</label>
+                    <select id="tipo_relatorio" onchange="alternarFiltroData(this.value)">
+                        <option value="diario">Diário</option>
+                        <option value="mensal">Mensal</option>
+                    </select>
+                </div>
+                 <div class="form-group" id="filtro-dia">
+                    <label for="data_relatorio">Dia:</label>
+                    <input type="date" id="data_relatorio" name="data_relatorio">
+                </div>
+                 <div class="form-group" id="filtro-mes" style="display:none;">
+                    <label for="mes_relatorio">Mês:</label>
+                    <input type="month" id="mes_relatorio" name="mes_relatorio">
+                </div>
+                <button class="btn" onclick="gerarRelatorioVendas()">Gerar Relatório</button>
+            </div>
+            <hr>
+            <div id="resultado-relatorio-vendas" style="display:none;">
+                <h3>Relatório de Vendas para <span id="periodo-relatorio"></span></h3>
+                <div class="painel-info">
+                    <h4>Valor Total Vendido</h4>
+                    <p id="valor-total-vendas">R$ 0,00</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2025 Companhia Aérea</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

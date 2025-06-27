@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Voos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Cadastro de Voos</h1>
+    </header>
+    <nav>
+        <a href="index.html" class="active">Início</a>
+        <a href="cadastroAvioes.html">Cadastrar Avião</a>
+        <a href="cadastroVoos.html">Cadastrar Voo</a>
+        <a href="compraPassagens.html">Comprar Passagem</a>
+        <a href="relatorioOcupacao.html">Relatório de Ocupação</a>
+        <a href="relatorioVendas.html">Relatório de Vendas</a>
+    </nav>
+    <main>
+        <div class="container">
+            <form id="form-voos">
+                <div class="form-group">
+                    <label for="numero_voo">Número do Voo:</label>
+                    <input type="text" id="numero_voo" name="numero_voo" required>
+                </div>
+                <div class="form-group">
+                    <label for="data_viagem">Data da Viagem:</label>
+                    <input type="date" id="data_viagem" name="data_viagem" required>
+                </div>
+                <div class="form-group">
+                    <label for="horario_viagem">Horário de Viagem:</label>
+                    <input type="time" id="horario_viagem" name="horario_viagem" required>
+                </div>
+                <div class="form-group">
+                    <label for="origem">Local de Origem:</label>
+                    <input type="text" id="origem" name="origem" onkeyup="sugerirDestino(this.value)" list="sugestoes_origem" required>
+                    <datalist id="sugestoes_origem">
+                        <option value="São Paulo (GRU)">
+                        <option value="Rio de Janeiro (GIG)">
+                        <option value="Belo Horizonte (CNF)">
+                    </datalist>
+                </div>
+                <div class="form-group">
+                    <label for="destino">Local de Destino:</label>
+                    <input type="text" id="destino" name="destino" required>
+                </div>
+                 <div class="form-group">
+                    <label for="valor_normal">Valor Passagem Normal (R$):</label>
+                    <input type="text" id="valor_normal" name="valor_normal" required>
+                </div>
+                 <div class="form-group">
+                    <label for="valor_especial">Valor Passagem Especial (R$):</label>
+                    <input type="text" id="valor_especial" name="valor_especial" required>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn">Salvar</button>
+                    <button type="button" class="btn btn-secondary" onclick="limparFormulario('form-voos')">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2025 Companhia Aérea</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
