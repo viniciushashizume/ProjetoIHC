@@ -21,6 +21,8 @@
     <main>
         <div class="container">
             <form id="form-avioes">
+                <input type="hidden" id="edit-index" name="edit-index">
+
                 <div class="form-group">
                     <label for="registro">Número de Registro:</label>
                     <input type="text" id="registro" name="registro" required>
@@ -38,7 +40,7 @@
                     <input type="number" id="assentos_especiais" name="assentos_especiais" required>
                 </div>
                 <div class="form-actions">
-                    <button type="submit" class="btn">Salvar</button>
+                    <button type="submit" class="btn" id="btn-salvar-aviao">Salvar</button>
                     <button type="button" class="btn btn-secondary" onclick="limparFormulario('form-avioes')">Cancelar</button>
                 </div>
             </form>
@@ -60,7 +62,10 @@
                         <td>Boeing 737</td>
                         <td>150</td>
                         <td>20</td>
-                        <td><button class="btn-delete" onclick="confirmarExclusao(this)">Excluir</button></td>
+                        <td>
+                            <button class="btn btn-edit" onclick="editarAviao(this)">Editar</button>
+                            <button class="btn-delete" onclick="confirmarExclusao(this)">Excluir</button>
+                        </td>
                     </tr>
                 </tbody>
             </table>

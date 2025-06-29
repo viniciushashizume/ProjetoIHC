@@ -1,3 +1,4 @@
+/* Estilos Gerais */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -43,6 +44,7 @@ main {
     margin: auto;
 }
 
+/* Estilos de Formulário */
 .form-group {
     margin-bottom: 1rem;
 }
@@ -64,6 +66,7 @@ main {
     margin-top: 1.5rem;
 }
 
+/* Estilos de Botões */
 .btn {
     background-color: #004a99;
     color: white;
@@ -95,6 +98,7 @@ main {
     cursor: pointer;
 }
 
+/* Estilos de Tabela */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -114,40 +118,7 @@ th {
     background-color: #f2f2f2;
 }
 
-footer {
-    text-align: center;
-    padding: 1rem;
-    margin-top: 2rem;
-    background-color: #333;
-    color: white;
-}
-
-.diretrizes {
-    margin-top: 3rem;
-    padding: 1rem;
-    background-color: #e9f5ff;
-    border-left: 5px solid #004a99;
-}
-
-.diretrizes h3 {
-    margin-top: 0;
-}
-
-.diretrizes ul {
-    padding-left: 20px;
-}
-
-.diretrizes li {
-    margin-bottom: 0.5rem;
-}
-
-.passo {
-    margin-bottom: 2rem;
-    border: 1px solid #ddd;
-    padding: 1.5rem;
-    border-radius: 5px;
-}
-
+/* Mapa de Assentos */
 .mapa-assentos {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
@@ -189,32 +160,94 @@ footer {
     display: inline-block;
 }
 
+
+/* --- SEÇÃO DO RELATÓRIO DE OCUPAÇÃO (ALTERAÇÕES) --- */
+
+/* ADICIONADO: Container em grade para organizar os painéis */
+#relatorio-ocupacao-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* ALTERADO: Estilos de painel melhorados */
 .painel-info {
     background-color: #f9f9f9;
-    border: 1px solid #eee;
-    padding: 15px;
-    margin: 10px 0;
-    border-radius: 5px;
+    border: 1px solid #e1e1e1;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center; /* Centraliza o conteúdo do painel */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
+
 .painel-info h4 {
     margin-top: 0;
+    color: #555;
 }
+
 .painel-info p {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     font-weight: bold;
     margin: 0;
-    color: #004a99;
+    color: #004a99; /* Cor alinhada ao tema */
 }
+
+/* ADICIONADO: Classe para o painel de ocupação ocupar a largura total */
+.painel-info.ocupacao-visual {
+    grid-column: 1 / -1;
+}
+
+/* ALTERADO: Barra de progresso com fundo e altura definidos */
 .progress-bar {
     width: 100%;
     background-color: #e0e0e0;
     border-radius: 5px;
     overflow: hidden;
-}
-.progress-bar-fill {
     height: 30px;
-    background-color: #004a99;
-    color: white;
+    margin-top: 10px;
+}
+
+/* ALTERADO: Preenchimento da barra com animação suave */
+#progress-bar-fill { /* Seletor corrigido para ID (#) */
+    height: 100%;
+    width: 0%; /* O JavaScript vai controlar a largura */
+    background-color: #28a745; /* Cor inicial verde */
+    border-radius: 5px;
+    transition: width 0.5s ease-in-out, background-color 0.5s ease; /* Animação suave */
+    /* As cores podem ser alteradas dinamicamente via JS */
+}
+
+/* --- FIM DA SEÇÃO DO RELATÓRIO --- */
+
+
+footer {
     text-align: center;
-    line-height: 30px;
+    padding: 1rem;
+    margin-top: 2rem;
+    background-color: #333;
+    color: white;
+}
+
+.btn:disabled {
+  background-color: #cccccc; /* Um tom de cinza para o fundo */
+  color: #666666;           /* Cor do texto mais escura para manter a legibilidade */
+  border-color: #cccccc;     /* Cor da borda correspondente */
+  cursor: not-allowed;     /* Exibe o símbolo de 'bloqueado' ao passar o mouse */
+}
+
+/* Adicione esta nova classe ao final da seção "Estilos de Botões" */
+
+.btn-edit {
+    background-color: #007bff; /* Azul para a ação de editar */
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 5px; /* Espaçamento entre os botões de ação */
+}
+
+.btn-edit:hover {
+    background-color: #0056b3;
 }

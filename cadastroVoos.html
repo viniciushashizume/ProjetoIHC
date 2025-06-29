@@ -35,7 +35,7 @@
                 </div>
                 <div class="form-group">
                     <label for="origem">Local de Origem:</label>
-                    <input type="text" id="origem" name="origem" onkeyup="sugerirDestino(this.value)" list="sugestoes_origem" required>
+                    <input type="text" id="origem" name="origem" oninput="sugerirDestino(this.value)" list="sugestoes_origem" required>
                     <datalist id="sugestoes_origem">
                         <option value="São Paulo (GRU)">
                         <option value="Rio de Janeiro (GIG)">
