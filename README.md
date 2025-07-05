@@ -1,0 +1,1 @@
+Este projeto é um protótipo de um sistema de gestão para companhias aéreas, desenvolvido com foco nos princípios de Interação Humano-Computador (IHC), utilizando HTML, CSS e JavaScript. O desenvolvimento foi guiado por diretrizes de IHC.
